@@ -1,25 +1,20 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>BGI</title>
-  <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" media="all" href="../css/style.css">
-</head>
-<body>
-  <header>
-    <h1>GBI Staff Area</h1>
-  </header>
+<?php require_once('../../private/initialize.php'); ?>
+<?php $page_title = "Staff Menu"; ?>
+<?php include(SHARED_PATH . '/staff_header.php'); ?>
 
-  <nav>
+<!-- MAIN CONTENT -->
+<section class="main-content">
+
+  <div id="main-menu">
+
+    <h2>Main Menu</h2>
     <ul>
-      <li><a href="index.php">Menu</a></li>
+      <li><a href="<?php echo url_for('/staff/subjects/index.php'); ?>">Subjects</a></li>
     </ul>
-  </nav>
 
-  <footer>
-    &copy; <?php echo date('Y'); ?> Globe Bank
-  </footer>
+  </div><!-- id="main-menu" -->
 
-</body>
-</html>
+</section><!-- class="main-content" -->
+
+<?php include(SHARED_PATH . '/staff_footer.php'); ?>
 
