@@ -15,15 +15,19 @@
       border: 1px solid #0055DD;
       background: #0055DD;
       color: $white;
-      text-align: left;
+      text-align: center;
     } //th
     td {
       border: 1px solid #999999;
+      text-align: center;
     } //td
   } //tr
 } //.list [table]
 
 /* Forms */
+form {
+  display: block;
+}
 dl {
   clear: both;
   overflow: hidden;
@@ -51,6 +55,21 @@ dt {
     padding-left: 1em;
   } //ul
 } //.errors
+
+
+/* MAIN CONTENT  */
+.main-content {
+  .page-metadata {
+    display: inline-block;
+    margin-bottom: 1em;
+    border: 2px solid $maroon;
+    padding: 0.5em;
+    font-size: 18px;
+    font-size: 1.125rem;
+    font-weight: $normal;
+    color: $purple;
+  }
+}
 
 
 

@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>GBI - <?php echo $page_title; ?></title>
+  <title>GBI - <?php echo h($page_title); ?></title>
   <meta charset="utf-8">
   <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Condensed:300,400|Roboto+Condensed:300,400" rel="stylesheet">
   <link rel="stylesheet" type="text/css" media="all" href="<?php echo url_for('/css/style.css'); ?>">
