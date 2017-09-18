@@ -1,16 +1,21 @@
 <?php require_once('../../../private/initialize.php'); ?>
 <?php
-  $pages = [
-    ['id' => '1', 'subject_id' => '1', 'position' => '1', 'visible' => '1', 'menu_name' => 'Subj 1 - Page 1'],
-    ['id' => '2', 'subject_id' => '1', 'position' => '2', 'visible' => '1', 'menu_name' => 'Subj 1 - Page 2'],
-    ['id' => '3', 'subject_id' => '1', 'position' => '3', 'visible' => '1', 'menu_name' => 'Subj 1 - Page 3'],
-    ['id' => '4', 'subject_id' => '2', 'position' => '1', 'visible' => '1', 'menu_name' => 'Subj 2 - Page 4'],
-    ['id' => '5', 'subject_id' => '2', 'position' => '2', 'visible' => '1', 'menu_name' => 'Subj 2 - Page 5'],
-    ['id' => '6', 'subject_id' => '2', 'position' => '3', 'visible' => '1', 'menu_name' => 'Subj 2 - Page 6'],
-    ['id' => '7', 'subject_id' => '3', 'position' => '1', 'visible' => '1', 'menu_name' => 'Subj 3 - Page 7'],
-    ['id' => '8', 'subject_id' => '3', 'position' => '2', 'visible' => '1', 'menu_name' => 'Subj 3 - Page 8'],
-    ['id' => '9', 'subject_id' => '3', 'position' => '3', 'visible' => '1', 'menu_name' => 'Subj 3 - Page 9']
-  ];
+// ARRAY
+/*  $pages = [
+  ['id' => '1', 'subject_id' => '1', 'position' => '1', 'visible' => '1', 'menu_name' => 'Subj 1 - Page 1'],
+  ['id' => '2', 'subject_id' => '1', 'position' => '2', 'visible' => '1', 'menu_name' => 'Subj 1 - Page 2'],
+  ['id' => '3', 'subject_id' => '1', 'position' => '3', 'visible' => '1', 'menu_name' => 'Subj 1 - Page 3'],
+  ['id' => '4', 'subject_id' => '2', 'position' => '1', 'visible' => '1', 'menu_name' => 'Subj 2 - Page 4'],
+  ['id' => '5', 'subject_id' => '2', 'position' => '2', 'visible' => '1', 'menu_name' => 'Subj 2 - Page 5'],
+  ['id' => '6', 'subject_id' => '2', 'position' => '3', 'visible' => '1', 'menu_name' => 'Subj 2 - Page 6'],
+  ['id' => '7', 'subject_id' => '3', 'position' => '1', 'visible' => '1', 'menu_name' => 'Subj 3 - Page 7'],
+  ['id' => '8', 'subject_id' => '3', 'position' => '2', 'visible' => '1', 'menu_name' => 'Subj 3 - Page 8'],
+  ['id' => '9', 'subject_id' => '3', 'position' => '3', 'visible' => '1', 'menu_name' => 'Subj 3 - Page 9']
+];*/
+
+  $page_set = find_all_pages();
+
+
 ?>
 
 <?php $page_title = "Pages"; ?>
@@ -39,7 +44,7 @@
         <th>&nbsp;</th>
       </tr>
 
-      <?php foreach ($pages as $page) { ?>
+      <?php while ($page = mysqli_fetch_assoc($page_set)) { ?>
         <tr>
           <td><?php echo h($page['id']); ?></td>
           <td><?php echo h($page['subject_id']); ?></td>
@@ -53,7 +58,7 @@
       <?php } ?>
 
     </table>
-
+    <?php mysqli_free_result($page_set); ?>
   </div>
 
 </section><!-- class="main-content" -->
